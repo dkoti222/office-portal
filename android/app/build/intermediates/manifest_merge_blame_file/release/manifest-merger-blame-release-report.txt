@@ -1,0 +1,266 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:3:5-67
+11-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:3:22-64
+12    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+12-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:4:6-80
+12-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:4:23-78
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:5:5-79
+13-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:5:22-77
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:6:5-80
+14-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:6:22-78
+15    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+15-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:7:5-81
+15-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:7:22-78
+16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+16-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:8:5-79
+16-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:8:22-76
+17    <uses-permission android:name="android.permission.WAKE_LOCK" />
+17-->[:react-native-firebase_storage] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\storage\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:5-68
+17-->[:react-native-firebase_storage] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\storage\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:22-65
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to check whether Wi-Fi is enabled -->
+18-->[:react-native-firebase_storage] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\storage\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
+18-->[:react-native-firebase_storage] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\storage\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:22-76
+19    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Required to to download files without a notification -->
+19-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:23:5-76
+19-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:23:22-73
+20    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+20-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:32:5-88
+20-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:32:22-85
+21
+22    <application
+22-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:10:5-29:19
+23        android:name="com.example.MainApplication"
+23-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:11:7-38
+24        android:allowBackup="false"
+24-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:15:7-34
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.7.0] C:\Users\leovo\.gradle\caches\transforms-3\845c42ea617b425eb1fb868d75dc0e08\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+26        android:icon="@mipmap/ic_launcher"
+26-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:13:7-41
+27        android:label="@string/app_name"
+27-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:12:7-39
+28        android:roundIcon="@mipmap/ic_launcher_round"
+28-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:14:7-52
+29        android:theme="@style/AppTheme" >
+29-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:16:7-38
+30        <activity
+30-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:17:7-28:18
+31            android:name="com.example.MainActivity"
+31-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:18:9-37
+32            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+32-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:20:9-118
+33            android:exported="true"
+33-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:23:9-32
+34            android:label="@string/app_name"
+34-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:19:9-41
+35            android:launchMode="singleTask"
+35-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:21:9-40
+36            android:windowSoftInputMode="adjustResize" >
+36-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:22:9-51
+37            <intent-filter>
+37-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:24:9-27:25
+38                <action android:name="android.intent.action.MAIN" />
+38-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:25:13-65
+38-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:25:21-62
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:26:13-73
+40-->C:\Users\leovo\Desktop\WorkSpace\Example\android\app\src\main\AndroidManifest.xml:26:23-70
+41            </intent-filter>
+42        </activity>
+43
+44        <meta-data
+44-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:9-11:36
+45            android:name="app_data_collection_default_enabled"
+45-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:13-63
+46            android:value="true" />
+46-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-33
+47
+48        <service
+48-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:9-21:19
+49            android:name="com.google.firebase.components.ComponentDiscoveryService"
+49-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-84
+50            android:directBootAware="true"
+50-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-43
+51            android:exported="false" >
+51-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-37
+52            <meta-data
+52-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:13-20:85
+53                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+53-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:17-120
+54                android:value="com.google.firebase.components.ComponentRegistrar" />
+54-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:20:17-82
+55            <meta-data
+55-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\leovo\.gradle\caches\transforms-3\1708abb4088f98c76165c68c8c92aa9e\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:17:13-19:85
+56                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+56-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\leovo\.gradle\caches\transforms-3\1708abb4088f98c76165c68c8c92aa9e\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:18:17-111
+57                android:value="com.google.firebase.components.ComponentRegistrar" />
+57-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\leovo\.gradle\caches\transforms-3\1708abb4088f98c76165c68c8c92aa9e\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:19:17-82
+58            <meta-data
+58-->[com.google.firebase:firebase-storage:20.2.1] C:\Users\leovo\.gradle\caches\transforms-3\e8ad0617c3b84c388989c58bb49ee53b\transformed\jetified-firebase-storage-20.2.1\AndroidManifest.xml:32:13-34:85
+59                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+59-->[com.google.firebase:firebase-storage:20.2.1] C:\Users\leovo\.gradle\caches\transforms-3\e8ad0617c3b84c388989c58bb49ee53b\transformed\jetified-firebase-storage-20.2.1\AndroidManifest.xml:33:17-107
+60                android:value="com.google.firebase.components.ComponentRegistrar" />
+60-->[com.google.firebase:firebase-storage:20.2.1] C:\Users\leovo\.gradle\caches\transforms-3\e8ad0617c3b84c388989c58bb49ee53b\transformed\jetified-firebase-storage-20.2.1\AndroidManifest.xml:34:17-82
+61        </service>
+62
+63        <provider
+63-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:23:9-27:38
+64            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+64-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:24:13-88
+65            android:authorities="com.example.reactnativefirebaseappinitprovider"
+65-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:25:13-86
+66            android:exported="false"
+66-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:26:13-37
+67            android:initOrder="99" />
+67-->[:react-native-firebase_app] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:13-35
+68        <provider
+68-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:35:9-43:20
+69            android:name="com.ReactNativeBlobUtil.Utils.FileProvider"
+69-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:36:13-70
+70            android:authorities="com.example.provider"
+70-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:37:13-60
+71            android:exported="false"
+71-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:38:13-37
+72            android:grantUriPermissions="true" >
+72-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:39:13-47
+73            <meta-data
+73-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:40:13-42:58
+74                android:name="android.support.FILE_PROVIDER_PATHS"
+74-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:41:17-67
+75                android:resource="@xml/provider_paths" />
+75-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:42:17-55
+76        </provider>
+77        <provider
+77-->[:react-native-file-viewer] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:9-16:20
+78            android:name="com.vinzscam.reactnativefileviewer.FileProvider"
+78-->[:react-native-file-viewer] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:13-75
+79            android:authorities="com.example.provider"
+79-->[:react-native-file-viewer] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:13-60
+80            android:exported="false"
+80-->[:react-native-file-viewer] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-37
+81            android:grantUriPermissions="true" >
+81-->[:react-native-file-viewer] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-47
+82            <meta-data
+82-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:40:13-42:58
+83                android:name="android.support.FILE_PROVIDER_PATHS"
+83-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:41:17-67
+84                android:resource="@xml/file_viewer_provider_paths" />
+84-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:42:17-55
+85        </provider>
+86        <provider
+86-->[:react-native-webview] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:9-16:20
+87            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+87-->[:react-native-webview] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:13-83
+88            android:authorities="com.example.fileprovider"
+88-->[:react-native-webview] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:13-64
+89            android:exported="false"
+89-->[:react-native-webview] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-37
+90            android:grantUriPermissions="true" >
+90-->[:react-native-webview] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-47
+91            <meta-data
+91-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:40:13-42:58
+92                android:name="android.support.FILE_PROVIDER_PATHS"
+92-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:41:17-67
+93                android:resource="@xml/file_provider_paths" />
+93-->[:react-native-blob-util] C:\Users\leovo\Desktop\WorkSpace\Example\node_modules\react-native-blob-util\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:42:17-55
+94        </provider>
+95        <provider
+95-->[com.google.firebase:firebase-common:20.3.3] C:\Users\leovo\.gradle\caches\transforms-3\04618219489c9d9e3066293e05e86ee0\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:25:9-30:39
+96            android:name="com.google.firebase.provider.FirebaseInitProvider"
+96-->[com.google.firebase:firebase-common:20.3.3] C:\Users\leovo\.gradle\caches\transforms-3\04618219489c9d9e3066293e05e86ee0\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:26:13-77
+97            android:authorities="com.example.firebaseinitprovider"
+97-->[com.google.firebase:firebase-common:20.3.3] C:\Users\leovo\.gradle\caches\transforms-3\04618219489c9d9e3066293e05e86ee0\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:27:13-72
+98            android:directBootAware="true"
+98-->[com.google.firebase:firebase-common:20.3.3] C:\Users\leovo\.gradle\caches\transforms-3\04618219489c9d9e3066293e05e86ee0\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:28:13-43
+99            android:exported="false"
+99-->[com.google.firebase:firebase-common:20.3.3] C:\Users\leovo\.gradle\caches\transforms-3\04618219489c9d9e3066293e05e86ee0\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:29:13-37
+100            android:initOrder="100" />
+100-->[com.google.firebase:firebase-common:20.3.3] C:\Users\leovo\.gradle\caches\transforms-3\04618219489c9d9e3066293e05e86ee0\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:30:13-36
+101
+102        <activity
+102-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\leovo\.gradle\caches\transforms-3\3f5e581b6c5a7c27d0d6ce7336c036bc\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
+103            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+103-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\leovo\.gradle\caches\transforms-3\3f5e581b6c5a7c27d0d6ce7336c036bc\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
+104            android:excludeFromRecents="true"
+104-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\leovo\.gradle\caches\transforms-3\3f5e581b6c5a7c27d0d6ce7336c036bc\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
+105            android:exported="false"
+105-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\leovo\.gradle\caches\transforms-3\3f5e581b6c5a7c27d0d6ce7336c036bc\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
+106            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+106-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\leovo\.gradle\caches\transforms-3\3f5e581b6c5a7c27d0d6ce7336c036bc\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
+107        <!--
+108            Service handling Google Sign-In user revocation. For apps that do not integrate with
+109            Google Sign-In, this service will never be started.
+110        -->
+111        <service
+111-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\leovo\.gradle\caches\transforms-3\3f5e581b6c5a7c27d0d6ce7336c036bc\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
+112            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+112-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\leovo\.gradle\caches\transforms-3\3f5e581b6c5a7c27d0d6ce7336c036bc\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
+113            android:exported="true"
+113-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\leovo\.gradle\caches\transforms-3\3f5e581b6c5a7c27d0d6ce7336c036bc\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
+114            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+114-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\leovo\.gradle\caches\transforms-3\3f5e581b6c5a7c27d0d6ce7336c036bc\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
+115            android:visibleToInstantApps="true" />
+115-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\leovo\.gradle\caches\transforms-3\3f5e581b6c5a7c27d0d6ce7336c036bc\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
+116
+117        <activity
+117-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\leovo\.gradle\caches\transforms-3\b71ef279c1683b5749acb2f0aa91f82a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+118            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+118-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\leovo\.gradle\caches\transforms-3\b71ef279c1683b5749acb2f0aa91f82a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+119            android:exported="false"
+119-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\leovo\.gradle\caches\transforms-3\b71ef279c1683b5749acb2f0aa91f82a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+120            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+120-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\leovo\.gradle\caches\transforms-3\b71ef279c1683b5749acb2f0aa91f82a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+121
+122        <meta-data
+122-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\leovo\.gradle\caches\transforms-3\4c98ac1678e91268ed33f9d3ff7f04ab\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:21:9-23:69
+123            android:name="com.google.android.gms.version"
+123-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\leovo\.gradle\caches\transforms-3\4c98ac1678e91268ed33f9d3ff7f04ab\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:22:13-58
+124            android:value="@integer/google_play_services_version" />
+124-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\leovo\.gradle\caches\transforms-3\4c98ac1678e91268ed33f9d3ff7f04ab\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:23:13-66
+125
+126        <provider
+126-->[androidx.emoji2:emoji2:1.0.0] C:\Users\leovo\.gradle\caches\transforms-3\917183cb484c5d05637f617d5972f589\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+127            android:name="androidx.startup.InitializationProvider"
+127-->[androidx.emoji2:emoji2:1.0.0] C:\Users\leovo\.gradle\caches\transforms-3\917183cb484c5d05637f617d5972f589\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+128            android:authorities="com.example.androidx-startup"
+128-->[androidx.emoji2:emoji2:1.0.0] C:\Users\leovo\.gradle\caches\transforms-3\917183cb484c5d05637f617d5972f589\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+129            android:exported="false" >
+129-->[androidx.emoji2:emoji2:1.0.0] C:\Users\leovo\.gradle\caches\transforms-3\917183cb484c5d05637f617d5972f589\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+130            <meta-data
+130-->[androidx.emoji2:emoji2:1.0.0] C:\Users\leovo\.gradle\caches\transforms-3\917183cb484c5d05637f617d5972f589\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+131                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+131-->[androidx.emoji2:emoji2:1.0.0] C:\Users\leovo\.gradle\caches\transforms-3\917183cb484c5d05637f617d5972f589\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+132                android:value="androidx.startup" />
+132-->[androidx.emoji2:emoji2:1.0.0] C:\Users\leovo\.gradle\caches\transforms-3\917183cb484c5d05637f617d5972f589\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+133            <meta-data
+133-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\leovo\.gradle\caches\transforms-3\f479eb7a3dc97eecd3d998321b7cd73d\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+134                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+134-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\leovo\.gradle\caches\transforms-3\f479eb7a3dc97eecd3d998321b7cd73d\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+135                android:value="androidx.startup" />
+135-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\leovo\.gradle\caches\transforms-3\f479eb7a3dc97eecd3d998321b7cd73d\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+136        </provider>
+137
+138        <meta-data
+138-->[com.facebook.soloader:soloader:0.10.5] C:\Users\leovo\.gradle\caches\transforms-3\3019da999cc2320dc750092c570bfcb2\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
+139            android:name="com.facebook.soloader.enabled"
+139-->[com.facebook.soloader:soloader:0.10.5] C:\Users\leovo\.gradle\caches\transforms-3\3019da999cc2320dc750092c570bfcb2\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
+140            android:value="false" />
+140-->[com.facebook.soloader:soloader:0.10.5] C:\Users\leovo\.gradle\caches\transforms-3\3019da999cc2320dc750092c570bfcb2\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
+141    </application>
+142
+143</manifest>
