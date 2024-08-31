@@ -73,7 +73,9 @@ const Login = ({navigation}) => {
       .where('password', '==', desiredPassword)
       .get()
       .then(querySnapshot => {
-        setIsLoading(false);
+        setIsLoading(false)
+
+
 
         if (!querySnapshot.empty) {
           querySnapshot.forEach(doc => {
