@@ -118,12 +118,15 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: hp(2.3),
     paddingVertical: hp(0.5),
+        width:wp(50)
   },
   namesub: {
     color: 'grey',
     fontFamily: 'OpenSans-Bold',
     fontSize: hp(2),
     paddingVertical: hp(0.1),
+    width:wp(55),
+  
   },
   status: {
     backgroundColor: '#1E5B70',

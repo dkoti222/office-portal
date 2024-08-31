@@ -30,10 +30,10 @@ const Recruitment = ({ navigation }) => {
       <Tab.Navigator
         initialRouteName="ShortList"
         screenOptions={{
-          tabBarLabelStyle: { fontSize: hp(1.2), color: 'white',fontWeight:'700' },
+          tabBarLabelStyle: { fontSize:hp(1.4),color: 'white',fontWeight:'600' },
           tabBarStyle: { backgroundColor: '#1E5B70' },
-          tabBarScrollEnabled: true, // Enable horizontal scroll
-          tabBarItemStyle:{width:wp(27)},
+          tabBarScrollEnabled: true, 
+          tabBarItemStyle:{width:wp(28)},
           tabBarIndicatorStyle: {
             backgroundColor: '#E97724', 
             height: 3, 

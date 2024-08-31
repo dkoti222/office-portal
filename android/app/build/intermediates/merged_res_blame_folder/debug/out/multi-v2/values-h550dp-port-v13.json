@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.rts.officehub.app-mergeDebugResources-45:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/admin/.gradle/caches/transforms-3/f26c0aa36f72d6b92a3e68035a8e9b6a/transformed/material-1.9.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "76",
+                        "endOffsets": "127"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-package com.example;
+package com.rts.officehub;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

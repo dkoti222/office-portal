@@ -35,6 +35,7 @@ const ProfileCreation = ({navigation}) => {
   const [imagedata, setImagedata] = useState('');
   const [fileUri, setFileUri] = useState(null);
   const [address, setAddress] = useState('');
+  const [msg,setMsg]=useState('')
   const designationOptions = [
     'Accountant',
     'Administrative Assistant',
@@ -82,10 +83,16 @@ const ProfileCreation = ({navigation}) => {
       return;
     }
 
-    if (!/^\d{10}$/.test(phone)) {
+    if (!/^(?![^6-9])\d{10}$/.test(phone)) {
       setShowAlert3(true);
       return;
     }
+      if (!/^[A-Za-z ]+$/.test(name) || name.length < 3 ) {
+    setMsg('Invalid Name or minimum  3 characters Required' )
+    setShowAlert3(true);
+    return;
+  }
+
 
     try {
       const useData = {
@@ -190,6 +197,7 @@ const ProfileCreation = ({navigation}) => {
             style={styles.input}
             placeholderTextColor="grey"
             placeholder="Phone"
+            maxLength={10}
             keyboardType="numeric"
             value={phone}
             onChangeText={text => setPhone(text)}
@@ -375,7 +383,7 @@ const ProfileCreation = ({navigation}) => {
         <Alert
           isVisible={showAlert3}
           title="Invalid Data"
-          message="please check phone number or email."
+          message={msg?msg:"please check phone number or email."}
           onClose={() => setShowAlert3(false)}
         />
      

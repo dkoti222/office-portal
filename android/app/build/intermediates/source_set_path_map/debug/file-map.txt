@@ -1,0 +1,71 @@
+com.rts.officehub.app-jetified-firebase-common-20.4.2-0 /Users/admin/.gradle/caches/transforms-3/0174ea8f9050ac17337be395214c3851/transformed/jetified-firebase-common-20.4.2/res
+com.rts.officehub.app-jetified-core-ktx-1.8.0-1 /Users/admin/.gradle/caches/transforms-3/030a165f4b29dcce7227c9fb0f554c39/transformed/jetified-core-ktx-1.8.0/res
+com.rts.officehub.app-jetified-AndroidPdfViewer-3.1.0-beta.3-2 /Users/admin/.gradle/caches/transforms-3/17bf0fcf5d051f97ed2c2209192fba2a/transformed/jetified-AndroidPdfViewer-3.1.0-beta.3/res
+com.rts.officehub.app-fragment-1.3.6-3 /Users/admin/.gradle/caches/transforms-3/2076124b374d7ac221f29f2412207c75/transformed/fragment-1.3.6/res
+com.rts.officehub.app-recyclerview-1.1.0-4 /Users/admin/.gradle/caches/transforms-3/21be19ae23609afaaa2aaef2a76c2178/transformed/recyclerview-1.1.0/res
+com.rts.officehub.app-jetified-appcompat-resources-1.5.0-5 /Users/admin/.gradle/caches/transforms-3/287a5737401e47868839c2abb3d701e4/transformed/jetified-appcompat-resources-1.5.0/res
+com.rts.officehub.app-jetified-tracing-1.1.0-6 /Users/admin/.gradle/caches/transforms-3/3eaaceda3246d20494343dc4232148e7/transformed/jetified-tracing-1.1.0/res
+com.rts.officehub.app-lifecycle-runtime-2.5.0-7 /Users/admin/.gradle/caches/transforms-3/490285143ec46db158e350a5f5a7cd94/transformed/lifecycle-runtime-2.5.0/res
+com.rts.officehub.app-jetified-play-services-base-18.0.1-8 /Users/admin/.gradle/caches/transforms-3/51ed76eee314681a7e06fa015d89cd47/transformed/jetified-play-services-base-18.0.1/res
+com.rts.officehub.app-jetified-numberpickerview-v1.1.5-9 /Users/admin/.gradle/caches/transforms-3/532cd85ab0b29396e802423cadb6cf0e/transformed/jetified-numberpickerview-v1.1.5/res
+com.rts.officehub.app-drawerlayout-1.1.1-10 /Users/admin/.gradle/caches/transforms-3/5cf8bc80d651146e53d99be9aaecae6a/transformed/drawerlayout-1.1.1/res
+com.rts.officehub.app-sqlite-2.2.0-11 /Users/admin/.gradle/caches/transforms-3/6149936dd076dfbd00d43a789604d51d/transformed/sqlite-2.2.0/res
+com.rts.officehub.app-cardview-1.0.0-12 /Users/admin/.gradle/caches/transforms-3/62edb51623dc0b1b5d2d9cb621b93ae6/transformed/cardview-1.0.0/res
+com.rts.officehub.app-jetified-react-android-0.72.5-debug-13 /Users/admin/.gradle/caches/transforms-3/6427411ba2ca0b3efeb11b927b5a239f/transformed/jetified-react-android-0.72.5-debug/res
+com.rts.officehub.app-jetified-viewpager2-1.0.0-14 /Users/admin/.gradle/caches/transforms-3/678d11b309bdb2a42c9d6b62635ba4d6/transformed/jetified-viewpager2-1.0.0/res
+com.rts.officehub.app-jetified-drawee-2.6.0-15 /Users/admin/.gradle/caches/transforms-3/790729113555649fbdacfab7b8ca76d1/transformed/jetified-drawee-2.6.0/res
+com.rts.officehub.app-jetified-play-services-auth-20.7.0-16 /Users/admin/.gradle/caches/transforms-3/7a78967a3c6c8f76369012e1e7048ffc/transformed/jetified-play-services-auth-20.7.0/res
+com.rts.officehub.app-jetified-lifecycle-process-2.4.1-17 /Users/admin/.gradle/caches/transforms-3/7ff789582eb979934a1cfc7312ce1d16/transformed/jetified-lifecycle-process-2.4.1/res
+com.rts.officehub.app-appcompat-1.5.0-18 /Users/admin/.gradle/caches/transforms-3/829152f675140deec6a4de3a86d9e22b/transformed/appcompat-1.5.0/res
+com.rts.officehub.app-lifecycle-viewmodel-2.5.0-19 /Users/admin/.gradle/caches/transforms-3/82e4482e54016052b47a602eb74060fb/transformed/lifecycle-viewmodel-2.5.0/res
+com.rts.officehub.app-jetified-datastore-1.0.0-20 /Users/admin/.gradle/caches/transforms-3/8915df02514f61c07405ecf19c48a430/transformed/jetified-datastore-1.0.0/res
+com.rts.officehub.app-core-1.8.0-21 /Users/admin/.gradle/caches/transforms-3/9864bd6bb0706a2d91075f9464488516/transformed/core-1.8.0/res
+com.rts.officehub.app-constraintlayout-2.0.1-22 /Users/admin/.gradle/caches/transforms-3/9b7479fabd9a8187cc10675a9d2dc544/transformed/constraintlayout-2.0.1/res
+com.rts.officehub.app-coordinatorlayout-1.2.0-23 /Users/admin/.gradle/caches/transforms-3/9b75a3fbd76d20591643c4514ad1afc2/transformed/coordinatorlayout-1.2.0/res
+com.rts.officehub.app-swiperefreshlayout-1.1.0-24 /Users/admin/.gradle/caches/transforms-3/aea023d65c53c8167390035ccb5b964e/transformed/swiperefreshlayout-1.1.0/res
+com.rts.officehub.app-jetified-lifecycle-viewmodel-savedstate-2.5.0-25 /Users/admin/.gradle/caches/transforms-3/b3dbebf809cda278b9dd981a74eaa564/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.0/res
+com.rts.officehub.app-jetified-annotation-experimental-1.1.0-26 /Users/admin/.gradle/caches/transforms-3/bd7c44191f83f31d4a60b8b3f4208ce7/transformed/jetified-annotation-experimental-1.1.0/res
+com.rts.officehub.app-jetified-flipper-0.182.0-27 /Users/admin/.gradle/caches/transforms-3/c3457a6337a0a86044235fe882315738/transformed/jetified-flipper-0.182.0/res
+com.rts.officehub.app-jetified-activity-1.5.0-28 /Users/admin/.gradle/caches/transforms-3/c752779e6ba471eaca35502d5624e347/transformed/jetified-activity-1.5.0/res
+com.rts.officehub.app-lifecycle-livedata-core-2.5.0-29 /Users/admin/.gradle/caches/transforms-3/ca62f241c34054191754261e71aa87bc/transformed/lifecycle-livedata-core-2.5.0/res
+com.rts.officehub.app-jetified-savedstate-1.2.0-30 /Users/admin/.gradle/caches/transforms-3/d19436dcdf8688e7e48f793cf488997b/transformed/jetified-savedstate-1.2.0/res
+com.rts.officehub.app-jetified-startup-runtime-1.1.1-31 /Users/admin/.gradle/caches/transforms-3/d57ecef4b59f476763854495d5a9ec15/transformed/jetified-startup-runtime-1.1.1/res
+com.rts.officehub.app-sqlite-framework-2.2.0-32 /Users/admin/.gradle/caches/transforms-3/dd04388332790f59d5e5f577d6400206/transformed/sqlite-framework-2.2.0/res
+com.rts.officehub.app-jetified-emoji2-1.2.0-33 /Users/admin/.gradle/caches/transforms-3/e4665814fc1148464dc72c373047cfc0/transformed/jetified-emoji2-1.2.0/res
+com.rts.officehub.app-transition-1.2.0-34 /Users/admin/.gradle/caches/transforms-3/e79c16369fe361a4a40254aaedcb2fa9/transformed/transition-1.2.0/res
+com.rts.officehub.app-jetified-autofill-1.1.0-35 /Users/admin/.gradle/caches/transforms-3/e84956c71da7c15bba1959f040ea79ab/transformed/jetified-autofill-1.1.0/res
+com.rts.officehub.app-jetified-play-services-basement-18.2.0-36 /Users/admin/.gradle/caches/transforms-3/f120eb585a5021c1ca7f3e28b6d11619/transformed/jetified-play-services-basement-18.2.0/res
+com.rts.officehub.app-material-1.9.0-37 /Users/admin/.gradle/caches/transforms-3/f26c0aa36f72d6b92a3e68035a8e9b6a/transformed/material-1.9.0/res
+com.rts.officehub.app-jetified-datastore-preferences-1.0.0-38 /Users/admin/.gradle/caches/transforms-3/f2ca8ea63ba7f72f25cfd41fda1caa8c/transformed/jetified-datastore-preferences-1.0.0/res
+com.rts.officehub.app-jetified-emoji2-views-helper-1.2.0-39 /Users/admin/.gradle/caches/transforms-3/f9b7a2bb6777aa86a7919acb5cdb2ed9/transformed/jetified-emoji2-views-helper-1.2.0/res
+com.rts.officehub.app-res-40 /Users/admin/Desktop/RTS APP/examplerts/android/app/build/generated/crashlytics/res/debug
+com.rts.officehub.app-pngs-41 /Users/admin/Desktop/RTS APP/examplerts/android/app/build/generated/res/pngs/debug
+com.rts.officehub.app-res-42 /Users/admin/Desktop/RTS APP/examplerts/android/app/build/generated/res/processDebugGoogleServices
+com.rts.officehub.app-resValues-43 /Users/admin/Desktop/RTS APP/examplerts/android/app/build/generated/res/resValues/debug
+com.rts.officehub.app-rs-44 /Users/admin/Desktop/RTS APP/examplerts/android/app/build/generated/res/rs/debug
+com.rts.officehub.app-mergeDebugResources-45 /Users/admin/Desktop/RTS APP/examplerts/android/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.rts.officehub.app-mergeDebugResources-46 /Users/admin/Desktop/RTS APP/examplerts/android/app/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.rts.officehub.app-merged_res-47 /Users/admin/Desktop/RTS APP/examplerts/android/app/build/intermediates/merged_res/debug
+com.rts.officehub.app-debug-48 /Users/admin/Desktop/RTS APP/examplerts/android/app/src/debug/res
+com.rts.officehub.app-main-49 /Users/admin/Desktop/RTS APP/examplerts/android/app/src/main/res
+com.rts.officehub.app-packaged_res-50 /Users/admin/Desktop/RTS APP/examplerts/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-51 /Users/admin/Desktop/RTS APP/examplerts/node_modules/@react-native-firebase/app/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-52 /Users/admin/Desktop/RTS APP/examplerts/node_modules/@react-native-firebase/crashlytics/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-53 /Users/admin/Desktop/RTS APP/examplerts/node_modules/@react-native-firebase/firestore/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-54 /Users/admin/Desktop/RTS APP/examplerts/node_modules/@react-native-firebase/storage/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-55 /Users/admin/Desktop/RTS APP/examplerts/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-56 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-blob-util/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-57 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-date-picker/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-58 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-document-picker/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-59 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-file-viewer/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-60 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-geolocation-service/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-61 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-gesture-handler/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-62 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-linear-gradient/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-63 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-pager-view/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-64 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-pdf/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-65 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-reanimated/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-66 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-67 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-68 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-sms-retriever/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-69 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug
+com.rts.officehub.app-packaged_res-70 /Users/admin/Desktop/RTS APP/examplerts/node_modules/react-native-webview/android/build/intermediates/packaged_res/debug

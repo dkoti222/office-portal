@@ -1,39 +1,55 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image, Modal,Dimensions } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Modal,
+  Dimensions,
+} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import SelectDropdown from 'react-native-select-dropdown';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FileViewer from 'react-native-file-viewer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ActivityIndicator } from 'react-native-paper';
-import firestore, { firebase } from '@react-native-firebase/firestore';
-import { Calendar } from 'react-native-calendars';
+import {ActivityIndicator} from 'react-native-paper';
+import firestore, {firebase} from '@react-native-firebase/firestore';
+import {Calendar} from 'react-native-calendars';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import Alert from '../Alert';
+import {WebView} from 'react-native-webview';
+import { Linking } from 'react-native';
 
-const ProfileView = ({ navigation }) => {
-
+const ProfileView = ({navigation}) => {
   const [nameDetails, setNameDetails] = useState('');
-  const [status, setStatus] = useState(null)
+  const [status, setStatus] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isCalendarVisible, setCalendarVisible] = useState(false);
-  const [statusOptions, setStatusOptions] = useState(['OfferRelease', 'Reject', 'OfferHold']);
+  const [showAlert, setShowAlert] = useState(false);
+  const [statusOptions, setStatusOptions] = useState([
+    'OfferRelease',
+    'Reject',
+    'OfferHold',
+  ]);
   const [date, setDate] = useState(null);
-
 
   const storeEmployeeId = async () => {
     const result = await AsyncStorage.getItem('PROFILENAME');
-    const parseItem = JSON.parse(result)
-    setNameDetails(parseItem)
-    setIsLoading(true)
+    const parseItem = JSON.parse(result);
+    setNameDetails(parseItem);
+    setIsLoading(true);
     if (parseItem) {
       const attendanceRef = firebase.firestore().collection('Recruitment');
-      const query = attendanceRef
-        .where('name', '==', parseItem.name)
+      const query = attendanceRef.where('name', '==', parseItem.name);
       query
         .get()
         .then(querySnapshot => {
@@ -42,161 +58,156 @@ const ProfileView = ({ navigation }) => {
             const docId = doc.id;
             data.docId = docId;
             setNameDetails(data);
-
           });
         })
         .catch(error => {
+          setShowAlert(false);
           console.error('Error getting documents:', error);
         });
     }
-    setIsLoading(false)
+    setIsLoading(false);
   };
 
   useEffect(() => {
+    console.log(nameDetails.fileUri, 'responseeeeeee');
 
     storeEmployeeId();
     if (nameDetails.status === 'OfferRelease') {
-      setStatusOptions(['Onboarding', 'Reject'])
-    }
-    else if (nameDetails.status === 'OfferHold') {
       setStatusOptions(['Onboarding', 'Reject']);
-    }
-    else if (nameDetails.status === 'Onboarding') {
+    } else if (nameDetails?.status === 'OfferHold') {
+      setStatusOptions(['Onboarding', 'Reject']);
+    } else if (nameDetails?.status === 'Onboarding') {
       setStatusOptions(['Fired', 'Resign']);
     }
   }, [nameDetails.status]);
 
   const updateStatus = () => {
-    setIsLoading(true)
+    setIsLoading(true);
     if (status == null) {
-      setIsLoading(false)
-      console.log('kkkkkkk')
+      setIsLoading(false);
       return;
     }
 
     if (nameDetails.docId) {
       firestore()
         .collection('Recruitment')
-        .doc(nameDetails.docId)
+        .doc(nameDetails?.docId)
         .update({
           status: status,
-          date: date
+          date: date,
         })
         .then(() => {
-          console.log('User updated!----')
-
-        })
+          console.log('User updated!----');
+        });
     }
-    setIsLoading(false)
+    setIsLoading(false);
     if (status === 'Onboarding') {
       navigation.replace('Onboarding');
     } else {
       navigation.replace('Recruitment');
     }
-
-  }
-
-  const openDocument = async () => {
-    console.log(nameDetails.imagedata.fileCopyUri);
-
-    try {
-      await FileViewer.open(nameDetails.imagedata.fileCopyUri);
-    } catch (error) {
-      console.error('Error opening document:', error);
-    }
   };
 
+  const openDocument = async url => {
 
-  const handleDayPress = (day) => {
+    console.log(url,'Koti Duddu.................')
+
+    console.log(url,'koti duddu')
+  const support=await Linking.canOpenURL(url)
+  if (support) {
+    await Linking.openURL(url)
+  } else {
+    console.log("something went wrong")
+  }
+
+  };
+
+  const handleDayPress = day => {
     const selectedDate = day.dateString;
     setDate(selectedDate);
-    setCalendarVisible(!isCalendarVisible)
+    setCalendarVisible(!isCalendarVisible);
     console.log(selectedDate);
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#f1f1f1' }}>
-
+    <View style={{flex: 1, backgroundColor: '#f1f1f1'}}>
       <View style={styles.top}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Recruitment")}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate('Recruitment')}>
           <Ionicons name="arrow-back" size={30} color="white" />
         </TouchableOpacity>
         <Text style={styles.headtext}>Candidate Info</Text>
-        <TouchableOpacity
-          onPress={
-            openDocument
-          }
-        >
+        <TouchableOpacity onPress={() => openDocument(nameDetails?.fileUri)}>
           <MaterialIcons name="drive-file-move" size={30} color="white" />
-
         </TouchableOpacity>
       </View>
 
-       
-       <View style={{flexDirection:'row',width:wp(100),alignItems:'center',paddingVertical:hp(2)}}>
-       <View style={styles.circle}>
+      <View
+        style={{
+          flexDirection: 'row',
+          width: wp(100),
+          alignItems: 'center',
+          paddingVertical: hp(2),
+          alignSelf: 'center',
+          marginTop: hp(2),
+        }}>
+        <View style={styles.circle}>
+          {nameDetails?.fileUri && (
             <Image
               style={styles.empolyeimage}
-           source={{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgI3cUdSnwYykjaVMjDjGgk28b2Gr91_bAEQ&usqp=CAU'}}
+              source={require('../../assests/images/RTS.png')}
             />
+          )}
         </View>
-        <View style={{ marginLeft:wp(8)}}>
-        <Text style={styles.nametext}>Duddu Koti</Text>
-        <TouchableOpacity style={styles.status}>
-            <Text style={styles.statustext}>Status</Text>
+        <View style={{marginLeft: wp(8)}}>
+          <Text style={styles.nametext}>{nameDetails?.name}</Text>
+          <TouchableOpacity style={styles.status}>
+            <Text style={styles.statustext}>{nameDetails?.status}</Text>
           </TouchableOpacity>
         </View>
-        
+      </View>
 
-       </View>
+      <Text style={styles.subheader}>Personal Information</Text>
 
-
-       <Text style={styles.subheader}>Personal Information</Text>
-             
-      <View style={{ marginLeft:wp(5)}}> 
-        
-         <View style={styles.rowicon}>
-             <View style={styles.circle2}>
-             <Ionicons name="call-outline" size={20} color="white" />
-             </View>
-          
-            <Text style={styles.text}>{nameDetails.phone}</Text>
+      <View style={{marginLeft: wp(5)}}>
+        <View style={styles.rowicon}>
+          <View style={styles.circle2}>
+            <Ionicons name="call-outline" size={20} color="white" />
           </View>
-          <View style={styles.rowicon}>
+
+          <Text style={styles.text}>{nameDetails?.phone}</Text>
+        </View>
+        <View style={styles.rowicon}>
           <View style={styles.circle2}>
             <Fontisto name="email" size={20} color="white" />
-            </View>
-            <Text style={styles.text}>{nameDetails.email}</Text>
           </View>
-       
-     
-        
-          <View style={styles.rowicon}>
-          <View style={styles.circle2}>
-            <FontAwesome5 name="toolbox" size={19} color="white" />
-            </View>
-            <Text style={styles.text}>Experience: {nameDetails.experience} years</Text>
-          </View>
-        
-          <View style={styles.rowicon}>
-          <View style={styles.circle2}>
-            <FontAwesome6 name="location-dot" size={20} color="white" />
-            </View>
-            <Text style={styles.text}>{nameDetails.address},INDIA</Text>
-          </View>
+          <Text style={styles.text}>{nameDetails?.email}</Text>
         </View>
 
+        <View style={styles.rowicon}>
+          <View style={styles.circle2}>
+            <FontAwesome5 name="toolbox" size={19} color="white" />
+          </View>
+          <Text style={styles.text}>
+            Experience: {nameDetails?.experience} years
+          </Text>
+        </View>
 
+        <View style={styles.rowicon}>
+          <View style={styles.circle2}>
+            <FontAwesome6 name="location-dot" size={20} color="white" />
+          </View>
+          <Text style={styles.text}>{nameDetails?.address},INDIA</Text>
+        </View>
+      </View>
 
-
-      {nameDetails.status !== 'Reject' && nameDetails.status !== 'Fired' && nameDetails.status !== 'Resign' ? (
+      {nameDetails.status !== 'Reject' &&
+      nameDetails.status !== 'Fired' &&
+      nameDetails.status !== 'Resign' ? (
         <SelectDropdown
           data={statusOptions}
           onSelect={(selectedItem, index) => {
-            setStatus(selectedItem)
-            setCalendarVisible(!isCalendarVisible)
+            setStatus(selectedItem);
+            setCalendarVisible(!isCalendarVisible);
           }}
           buttonTextAfterSelection={(selectedItem, index) => selectedItem}
           defaultButtonText="status"
@@ -206,9 +217,9 @@ const ProfileView = ({ navigation }) => {
             marginTop: hp(1),
             paddingHorizontal: wp(4),
             borderWidth: 1,
-            borderColor: '#E97724'
+            borderColor: '#E97724',
           }}
-          rowTextStyle={{ textAlign: 'left' }}
+          rowTextStyle={{textAlign: 'left'}}
           buttonStyle={{
             paddingHorizontal: wp(4),
             paddingVertical: hp(1.5),
@@ -218,7 +229,7 @@ const ProfileView = ({ navigation }) => {
             borderRadius: wp(2),
             borderWidth: 1,
             borderColor: '#E97724',
-       alignSelf:'center'
+            alignSelf: 'center',
           }}
           dropdownStyle={{
             backgroundColor: '#d1d8e0',
@@ -227,9 +238,9 @@ const ProfileView = ({ navigation }) => {
             paddingHorizontal: wp(3),
             borderWidth: 1,
             borderColor: '#E97724',
-            height: hp(30)
+            height: hp(30),
           }}
-          buttonTextStyle={{ color: 'black', textAlign: 'left', fontSize: hp(2) }}
+          buttonTextStyle={{color: 'black', textAlign: 'left', fontSize: hp(2)}}
           renderDropdownIcon={() => {
             return (
               <View>
@@ -240,51 +251,64 @@ const ProfileView = ({ navigation }) => {
         />
       ) : null}
 
-      {status === 'Onboarding' &&
-        <Modal transparent={true} visible={isCalendarVisible} animationType="slide">
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <View style={{ width: wp(80), backgroundColor: '#1E5B70', borderRadius: 10 }}>
+      {status === 'Onboarding' && (
+        <Modal
+          transparent={true}
+          visible={isCalendarVisible}
+          animationType="slide">
+          <View
+            style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <View
+              style={{
+                width: wp(80),
+                backgroundColor: '#1E5B70',
+                borderRadius: 10,
+              }}>
               <TouchableOpacity
-                onPress={() => setCalendarVisible(!isCalendarVisible)} >
+                onPress={() => setCalendarVisible(!isCalendarVisible)}>
                 <Entypo
                   style={{
                     alignSelf: 'flex-end',
-                    marginRight: wp(4), paddingVertical: hp(1)
+                    marginRight: wp(4),
+                    paddingVertical: hp(1),
                   }}
                   name="circle-with-cross"
                   size={35}
                   color="white"
                 />
               </TouchableOpacity>
-              <Calendar
-                onDayPress={(day) => handleDayPress(day)}
-              />
+              <Calendar onDayPress={day => handleDayPress(day)} />
             </View>
-
-
           </View>
         </Modal>
-      }
-      {nameDetails.status !== 'Reject' && nameDetails.status !== 'Fired' && nameDetails.status !== 'Resign' ? (
+      )}
+      {nameDetails.status !== 'Reject' &&
+      nameDetails.status !== 'Fired' &&
+      nameDetails.status !== 'Resign' ? (
         <TouchableOpacity
           activeOpacity={1}
           style={styles.button}
-          onPress={updateStatus}
-        >
+          onPress={updateStatus}>
           <Text style={styles.logintext}>UPDATE STATUS</Text>
         </TouchableOpacity>
       ) : null}
 
-      <View style={{ position: 'absolute', top: hp(45), left: wp(44) }}>
-        {isLoading && <ActivityIndicator size={45} animating={true} color={'#1E5B70'} />}
+      <View style={{position: 'absolute', top: hp(45), left: wp(44)}}>
+        {isLoading && (
+          <ActivityIndicator size={45} animating={true} color={'#1E5B70'} />
+        )}
       </View>
-
-
+      <Alert
+        isVisible={showAlert}
+        title="Invalid Phone Number"
+        message="No user found with the specified credentials."
+        onClose={() => setShowAlert(false)}
+      />
     </View>
-  )
-}
+  );
+};
 
-export default ProfileView
+export default ProfileView;
 
 const styles = StyleSheet.create({
   top: {
@@ -295,7 +319,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: wp(8),
     paddingVertical: hp(1),
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   headtext: {
     fontSize: hp(2.7),
@@ -313,12 +337,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: hp(3),
     borderColor: 'lightgrey',
-    alignSelf:'center'
+    alignSelf: 'center',
   },
   logintext: {
-    fontSize: hp(3),
+    fontSize: hp(2.5),
     color: 'white',
-    fontFamily: 'OpenSans-SemiBold'
+    fontFamily: 'OpenSans-SemiBold',
   },
   circle: {
     borderRadius:
@@ -330,7 +354,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft:wp(8)
+    marginLeft: wp(8),
   },
 
   empolyeimage: {
@@ -348,23 +372,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: hp(0.6),
     borderRadius: 15,
-    height:hp(3.5),
-    width:wp(30),
-    marginTop:hp(.5)
+    height: hp(3.5),
+    width: wp(30),
+    marginTop: hp(0.5),
   },
   statustext: {
     color: 'white',
     fontSize: hp(1.7),
   },
-  nametext:{
+  nametext: {
     fontSize: hp(2.5),
-    color:'#1E5B70',
-    textAlign:'center'
+    color: '#1E5B70',
+    textAlign: 'center',
   },
-  rowicon:{
-    flexDirection:'row',
-     paddingVertical:hp(.6), 
-     marginBottom:hp(.5)
+  rowicon: {
+    flexDirection: 'row',
+    paddingVertical: hp(0.6),
+    marginBottom: hp(0.5),
   },
   circle2: {
     borderRadius:
@@ -374,26 +398,22 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width * 0.09,
     height: Dimensions.get('window').width * 0.09,
     backgroundColor: '#1E5B70',
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
     fontSize: hp(2.3),
     color: '#1E5B70',
     marginLeft: wp(2),
-    textAlign:'center',
-    marginTop:hp(0.5)
+    textAlign: 'center',
+    marginTop: hp(0.5),
   },
-  subheader:{
-    fontSize:hp(2.7),
-    marginLeft:wp(5),
-    fontFamily:'OpenSans-Bold',
-    paddingVertical:hp(2),
-    fontWeight:'700',
-    color:'#1E5B70'
-  }
-
-
-
-
-})
+  subheader: {
+    fontSize: hp(2.7),
+    marginLeft: wp(5),
+    fontFamily: 'OpenSans-Bold',
+    paddingVertical: hp(2),
+    fontWeight: '700',
+    color: '#1E5B70',
+  },
+});

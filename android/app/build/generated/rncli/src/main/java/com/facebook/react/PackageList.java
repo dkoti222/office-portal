@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-firebase/app
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
+// @react-native-firebase/crashlytics
+import io.invertase.firebase.crashlytics.ReactNativeFirebaseCrashlyticsPackage;
 // @react-native-firebase/firestore
 import io.invertase.firebase.firestore.ReactNativeFirebaseFirestorePackage;
 // @react-native-firebase/storage
@@ -98,6 +100,7 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new AsyncStoragePackage(),
       new ReactNativeFirebaseAppPackage(),
+      new ReactNativeFirebaseCrashlyticsPackage(),
       new ReactNativeFirebaseFirestorePackage(),
       new ReactNativeFirebaseStoragePackage(),
       new RNCMaskedViewPackage(),

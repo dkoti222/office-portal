@@ -57,8 +57,6 @@ const Home = ({navigation}) => {
   const [checkInTime, setCheckInTime] = useState('');
   const [checkOutTime, setCheckOutTime] = useState('');
 
-
-        
   const changeScreen=(item)=>{
     if(item.screen){
       navigation.navigate(item.screen)
@@ -84,7 +82,9 @@ const Home = ({navigation}) => {
   useEffect(() => {
     const nameData = async () => {
       const result = await AsyncStorage.getItem('name');
+      console.log(result,'intial checkkkkkkkkkkk')
       const parseItem = JSON.parse(result);
+      
       // console.log(parseItem,'kkkkkkkkkk')
       setNameDetails(parseItem);
       setIsLoading(false);
@@ -428,7 +428,7 @@ const textStyle2=useAnimatedStyle(()=>{
           <AntDesign name="clockcircleo" size={30} color="white" style={{marginTop:hp(1)}} />
          <View style={{marginLeft:wp(3)}}>
          <Text style={styles.timeName}>{currentDate.toString().slice(8,10) +" " + currentDate.toString().slice(4,7) +" " + currentDate.toString().slice(11,15)}</Text>
-         <Text style={styles.timeName}>{currentDay} | Genaral</Text>
+         <Text style={styles.timeName}>{currentDay} | General</Text>
          </View>
 
           </View>

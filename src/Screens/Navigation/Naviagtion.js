@@ -17,6 +17,8 @@ import Onboarding from '../Onboarding/Onboarding';
 import Leaves from '../Leaves/Leaves';
 import CalenderView from '../Attendance/CalenderView';
 import CalenderViewEmpolyee from '../Attendance/CalenderViewEmpolyee';
+import Terms from '../Condition/Terms';
+import Privacy from '../Condition/Privacy';
 const Stack = createStackNavigator();
 const Navigation = () => {
   return (
@@ -38,6 +40,9 @@ const Navigation = () => {
         <Stack.Screen name="Leaves" component={Leaves } />
         <Stack.Screen name="CalenderView" component={CalenderView } />
         <Stack.Screen name="CalenderViewEmpolyee" component={CalenderViewEmpolyee } />
+        <Stack.Screen name="Terms" component={Terms } />
+        <Stack.Screen name="Privacy" component={Privacy } />
+  
       </Stack.Navigator>
     </NavigationContainer>
   )

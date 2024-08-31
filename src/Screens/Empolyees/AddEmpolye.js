@@ -41,6 +41,7 @@ const AddEmpolye = ({navigation}) => {
   const [showAlert2, setShowAlert2] = useState(false);
   const [showAlert3, setShowAlert3] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [msg, setMsg] = useState('');
 
   const designationOptions = [
     'Accountant',
@@ -78,7 +79,7 @@ const AddEmpolye = ({navigation}) => {
       setShowAlert(true);
       return;
     }
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+    if (!/^[a-z0-9.%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
       setShowAlert3(true);
       return;
     }
@@ -92,11 +93,15 @@ const AddEmpolye = ({navigation}) => {
       setShowAlert(true);
       return;
     }
+    if (!/^[A-Za-z ]+$/.test(name) || name.length < 3) {
+      setMsg('Invalid Name or minimum  3 characters Required');
+      setShowAlert3(true);
+      return;
+    }
 
     try {
       const employeeId = uuid.v4();
       let roleID;
-
       if (role === 'CEO') {
         roleID = 1;
       } else if (role === 'CTO') {
@@ -108,6 +113,7 @@ const AddEmpolye = ({navigation}) => {
       } else if (role === 'EMPLOYEE') {
         roleID = 5;
       }
+
       const useData = {
         id: employeeId,
         phone: phone,
@@ -124,6 +130,7 @@ const AddEmpolye = ({navigation}) => {
         fileData: fileData,
         fileUri: fileUri,
       };
+      console.log(useData, 'first check');
 
       await firestore().collection('Empolyeelist').add(useData);
       setPhone(''),
@@ -150,13 +157,12 @@ const AddEmpolye = ({navigation}) => {
       });
       if (response) {
         setImagedata(response);
-      } 
-   
+      }
     } catch (err) {
       console.log(err);
     }
   };
-  const uploadImage = async (imageUri) => {
+  const uploadImage = async imageUri => {
     setIsLoading(true);
     try {
       if (!imageUri) {
@@ -165,7 +171,6 @@ const AddEmpolye = ({navigation}) => {
         return;
       }
       if (imageUri.startsWith('https://firebasestorage.googleapis.com')) {
-        
         setIsLoading(false);
         setShowAlert2(true);
         return;
@@ -190,12 +195,12 @@ const AddEmpolye = ({navigation}) => {
       });
       if (response) {
         setFileData(response);
-      } 
+      }
     } catch (err) {
       console.log(err);
     }
   };
-  const uploadFile = async (fileUri) => {
+  const uploadFile = async fileUri => {
     setIsLoading(true);
     try {
       if (!fileUri) {
@@ -230,202 +235,202 @@ const AddEmpolye = ({navigation}) => {
         <Text style={styles.headtext}>Add Employees</Text>
       </View>
 
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <TextInput
+          style={styles.input}
+          placeholderTextColor="grey"
+          placeholder="Phone Number"
+          keyboardType="numeric"
+          value={phone}
+          onChangeText={text => setPhone(text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholderTextColor="grey"
+          placeholder="Password"
+          value={password}
+          onChangeText={text => setPassword(text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholderTextColor="grey"
+          placeholder="Full Name"
+          value={name}
+          onChangeText={text => setName(text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholderTextColor="grey"
+          placeholder="Email"
+          value={email}
+          onChangeText={text => setEmail(text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholderTextColor="grey"
+          placeholder="Employee ID"
+          value={code}
+          onChangeText={text => setCode(text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholderTextColor="grey"
+          placeholder="Experience"
+          keyboardType="numeric"
+          value={experience}
+          onChangeText={text => setExperience(text)}
+        />
+        <SelectDropdown
+          data={designationOptions}
+          onSelect={(selectedItem, index) => setDesignation(selectedItem)}
+          buttonTextAfterSelection={(selectedItem, index) => selectedItem}
+          defaultButtonText="Designation"
+          rowStyle={{
+            borderRadius: wp(2),
+            backgroundColor: '#f1f1f1',
+            marginTop: hp(1),
+            paddingHorizontal: wp(4),
+            borderWidth: 1,
+            borderColor: '#E97724',
+          }}
+          rowTextStyle={{textAlign: 'left'}}
+          buttonStyle={{
+            paddingHorizontal: wp(4),
+            paddingVertical: hp(1),
+            width: wp(90),
+            backgroundColor: 'white',
+            marginTop: hp(2),
+            borderRadius: wp(1),
+            borderWidth: 1,
+            borderColor: '#E97724',
+          }}
+          dropdownStyle={{
+            backgroundColor: '#d1d8e0',
+            borderRadius: wp(2),
+            paddingVertical: hp(2),
+            paddingHorizontal: wp(3),
+            borderWidth: 1,
+            borderColor: '#E97724',
+            height: hp(40),
+          }}
+          buttonTextStyle={{
+            color: designation ? 'black' : 'grey',
+            textAlign: 'left',
+            fontSize: hp(2),
+          }}
+          renderDropdownIcon={() => {
+            return (
+              <View>
+                <Entypo name="chevron-down" size={30} color="#E97724" />
+              </View>
+            );
+          }}
+        />
+        <SelectDropdown
+          data={roleOptions}
+          onSelect={(selectedItem, index) => setRole(selectedItem)}
+          buttonTextAfterSelection={(selectedItem, index) => selectedItem}
+          defaultButtonText="Role"
+          rowStyle={{
+            borderRadius: wp(1),
+            backgroundColor: '#f1f1f1',
+            marginTop: hp(1),
+            paddingHorizontal: wp(4),
+            borderWidth: 1,
+            borderColor: '#E97724',
+          }}
+          rowTextStyle={{textAlign: 'left'}}
+          buttonStyle={{
+            paddingHorizontal: wp(4),
+            paddingVertical: hp(1),
+            width: wp(90),
+            backgroundColor: 'white',
+            marginTop: hp(2),
+            borderRadius: wp(1),
+            borderWidth: 1,
+            borderColor: '#E97724',
+          }}
+          dropdownStyle={{
+            backgroundColor: '#d1d8e0',
+            borderRadius: wp(1),
+            paddingVertical: hp(2),
+            paddingHorizontal: wp(3),
+            borderWidth: 1,
+            borderColor: '#E97724',
+            height: hp(40),
+          }}
+          buttonTextStyle={{
+            color: role ? 'black' : 'grey',
+            textAlign: 'left',
+            fontSize: hp(2),
+          }}
+          renderDropdownIcon={() => {
+            return (
+              <View>
+                <Entypo name="chevron-down" size={30} color="#E97724" />
+              </View>
+            );
+          }}
+        />
 
-      <ScrollView 
-      showsVerticalScrollIndicator={false}
-     >
-      <TextInput
-        style={styles.input}
-        placeholderTextColor="grey"
-        placeholder="Phone"
-        keyboardType="numeric"
-        value={phone}
-        onChangeText={text => setPhone(text)}
-      />
-      <TextInput
-        style={styles.input}
-        placeholderTextColor="grey"
-        placeholder="Password"
-        value={password}
-        onChangeText={text => setPassword(text)}
-      />
-      <TextInput
-        style={styles.input}
-        placeholderTextColor="grey"
-        placeholder="Name"
-        value={name}
-        onChangeText={text => setName(text)}
-      />
-      <TextInput
-        style={styles.input}
-        placeholderTextColor="grey"
-        placeholder="Email"
-        value={email}
-        onChangeText={text => setEmail(text)}
-      />
-      <TextInput
-        style={styles.input}
-        placeholderTextColor="grey"
-        placeholder="Code"
-        value={code}
-        onChangeText={text => setCode(text)}
-      />
-      <TextInput
-        style={styles.input}
-        placeholderTextColor="grey"
-        placeholder="Experience"
-        keyboardType="numeric"
-        value={experience}
-        onChangeText={text => setExperience(text)}
-      />
-      <SelectDropdown
-        data={designationOptions}
-        onSelect={(selectedItem, index) => setDesignation(selectedItem)}
-        buttonTextAfterSelection={(selectedItem, index) => selectedItem}
-        defaultButtonText="Designation"
-        rowStyle={{
-          borderRadius: wp(2),
-          backgroundColor: '#f1f1f1',
-          marginTop: hp(1),
-          paddingHorizontal: wp(4),
-          borderWidth: 1,
-          borderColor: '#E97724',
-        }}
-        rowTextStyle={{textAlign: 'left'}}
-        buttonStyle={{
-          paddingHorizontal: wp(4),
-          paddingVertical: hp(1),
-          width: wp(90),
-          backgroundColor: 'white',
-          marginTop: hp(2),
-          borderRadius: wp(1),
-          borderWidth: 1,
-          borderColor: '#E97724',
-        }}
-        dropdownStyle={{
-          backgroundColor: '#d1d8e0',
-          borderRadius: wp(2),
-          paddingVertical: hp(2),
-          paddingHorizontal: wp(3),
-          borderWidth: 1,
-          borderColor: '#E97724',
-          height: hp(40),
-        }}
-        buttonTextStyle={{
-          color: designation ? 'black' : 'grey',
-          textAlign: 'left',
-          fontSize: hp(2),
-        }}
-        renderDropdownIcon={() => {
-          return (
-            <View>
-              <Entypo name="chevron-down" size={30} color="#E97724" />
+        <View
+          style={{
+            flexDirection: 'row',
+            width: wp(90),
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}>
+          <TouchableOpacity onPress={PickFile} style={styles.filechoose}>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <Text style={styles.choosename}>
+                {' '}
+                {fileData && fileData.name
+                  ? fileData.name.substring(0, 15)
+                  : 'Choose File'}{' '}
+              </Text>
+              <AntDesign name="folderopen" size={30} color="#E97724" />
             </View>
-          );
-        }}
-      />
-      <SelectDropdown
-        data={roleOptions}
-        onSelect={(selectedItem, index) => setRole(selectedItem)}
-        buttonTextAfterSelection={(selectedItem, index) => selectedItem}
-        defaultButtonText="Role"
-        rowStyle={{
-          borderRadius: wp(1),
-          backgroundColor: '#f1f1f1',
-          marginTop: hp(1),
-          paddingHorizontal: wp(4),
-          borderWidth: 1,
-          borderColor: '#E97724',
-        }}
-        rowTextStyle={{textAlign: 'left'}}
-        buttonStyle={{
-          paddingHorizontal: wp(4),
-          paddingVertical: hp(1),
-          width: wp(90),
-          backgroundColor: 'white',
-          marginTop: hp(2),
-          borderRadius: wp(1),
-          borderWidth: 1,
-          borderColor: '#E97724',
-        }}
-        dropdownStyle={{
-          backgroundColor: '#d1d8e0',
-          borderRadius: wp(1),
-          paddingVertical: hp(2),
-          paddingHorizontal: wp(3),
-          borderWidth: 1,
-          borderColor: '#E97724',
-          height: hp(40),
-        }}
-        buttonTextStyle={{
-          color: role ? 'black' : 'grey',
-          textAlign: 'left',
-          fontSize: hp(2),
-        }}
-        renderDropdownIcon={() => {
-          return (
-            <View>
-              <Entypo name="chevron-down" size={30} color="#E97724" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => uploadFile(fileData?.fileCopyUri)}
+            style={styles.upload}>
+            <Entypo name="upload" size={30} color="#E97724" />
+          </TouchableOpacity>
+        </View>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            width: wp(90),
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}>
+          <TouchableOpacity onPress={pickImage} style={styles.filechoose}>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <Text style={styles.choosename}>
+                {' '}
+                {imagedata && imagedata.name
+                  ? imagedata.name.substring(0, 15)
+                  : 'Choose Image'}{' '}
+              </Text>
+              <Entypo name="image" size={30} color="#E97724" />
             </View>
-          );
-        }}
-      />
-
-      <View
-        style={{
-          flexDirection: 'row',
-          width: wp(90),
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}>
-        <TouchableOpacity onPress={PickFile} style={styles.filechoose}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.choosename}>
-              {' '}
-              {fileData && fileData.name
-                ? fileData.name.substring(0, 15)
-                : 'Choose Profile'}{' '}
-            </Text>
-            <AntDesign name="folderopen" size={30} color="#E97724" />
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={()=>uploadFile(fileData?.fileCopyUri)} style={styles.upload}>
-          <Entypo name="upload" size={30} color="#E97724" />
-        </TouchableOpacity>
-      </View>
-
-      <View
-        style={{
-          flexDirection: 'row',
-          width: wp(90),
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}>
-        <TouchableOpacity onPress={pickImage} style={styles.filechoose}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.choosename}>
-              {' '}
-              {imagedata && imagedata.name
-                ? imagedata.name.substring(0, 15)
-                : 'Choose Image'}{' '}
-            </Text>
-            <Entypo name="image" size={30} color="#E97724" />
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={()=>uploadImage(imagedata?.fileCopyUri)} style={styles.upload}>
-          <Entypo name="upload" size={30} color="#E97724" />
-        </TouchableOpacity>
-      </View>
-  
-
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => uploadImage(imagedata?.fileCopyUri)}
+            style={styles.upload}>
+            <Entypo name="upload" size={30} color="#E97724" />
+          </TouchableOpacity>
+        </View>
       </ScrollView>
 
-     
       <TouchableOpacity
         activeOpacity={1}
         style={styles.button}
         onPress={updateData}>
-        <Text style={styles.logintext}>ADD DATA</Text>
+        <Text style={styles.logintext}>SAVE</Text>
       </TouchableOpacity>
 
       <Alert
@@ -443,7 +448,8 @@ const AddEmpolye = ({navigation}) => {
       <Alert
         isVisible={showAlert3}
         title="Invalid Data"
-        message="please check phone number or email or password muustbe 6 characters."
+        // message="please check phone number or email or password muustbe 6 characters."
+        message={msg}
         onClose={() => setShowAlert3(false)}
       />
 
@@ -470,7 +476,6 @@ const styles = StyleSheet.create({
     marginTop: hp(2),
   },
   button: {
-
     paddingHorizontal: wp(4),
     paddingVertical: hp(1.5),
     width: wp(60),
@@ -478,10 +483,10 @@ const styles = StyleSheet.create({
     borderRadius: wp(1),
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom:hp(2),
+    marginBottom: hp(2),
     elevation: 5,
-    borderWidth:1,
-    marginVertical:hp(2),
+    borderWidth: 1,
+    marginVertical: hp(2),
   },
   logintext: {
     fontSize: hp(3),

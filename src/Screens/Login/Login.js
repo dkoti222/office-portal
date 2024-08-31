@@ -18,6 +18,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Alert from '../Alert';
 import {ActivityIndicator} from 'react-native-paper';
 import SmsRetriever from 'react-native-sms-retriever';
+import { Checkbox } from 'react-native-paper';
 
 const Login = ({navigation}) => {
   const [phone, setPhone] = useState('');
@@ -28,6 +29,7 @@ const Login = ({navigation}) => {
   const [showAlert2, setShowAlert2] = useState(false);
   const [showAlert3, setShowAlert3] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     const requestPhoneNumber = async () => {
@@ -76,6 +78,7 @@ const Login = ({navigation}) => {
         if (!querySnapshot.empty) {
           querySnapshot.forEach(doc => {
             const data = doc.data(); 
+            console.log(data,'last checkkkkkkkkkkk')
             const rqData = {
               name: data.name,
               designation: data.designation,
@@ -83,6 +86,8 @@ const Login = ({navigation}) => {
               id: data.id,
               image:data.imageUri
             };
+             console.log(rqData,'kkkkk',JSON.stringify(rqData))
+
             AsyncStorage.setItem('name', JSON.stringify(rqData));
             navigation.replace('Home');
           });
@@ -134,9 +139,33 @@ const Login = ({navigation}) => {
               placeholderTextColor={isPasswordFocused ? '#1E5B70' : 'grey'}
             />
           </View>
+
+          <View style={{flexDirection:'row',alignItems:'center'}}>
+  <Checkbox
+    status={checked ? 'checked' : 'unchecked'}
+    onPress={() => {
+      setChecked(!checked);
+    }}
+  />
+     <View style={{flexDirection:'row'}}>
+      <Text> I accept the </Text>
+      <TouchableOpacity onPress={()=>navigation.navigate('Terms')}>
+        <Text style={{fontWeight: 'bold', textDecorationLine: 'underline'}} > terms & conditions</Text>
+      </TouchableOpacity>
+      <Text> and </Text>
+      <TouchableOpacity onPress={()=>navigation.navigate('Privacy')}>
+        <Text style={{fontWeight: 'bold', textDecorationLine: 'underline'}}>privacy & policy</Text>
+      </TouchableOpacity>
+
+     </View>
+
+</View>
+
+          
           <TouchableOpacity
+          disabled={!checked}
             activeOpacity={1}
-            style={styles.button}
+            style={[styles.button,{backgroundColor: checked ? '#1a6372':'grey'}]}
             onPress={handleLogin}>
             <Text style={styles.logintext}>LOGIN</Text>
           </TouchableOpacity>

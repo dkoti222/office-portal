@@ -31,7 +31,9 @@ const EmpolyeList = ({ navigation }) => {
         activeOpacity={1}
       >
         <View style={styles.list}>
-          <View style={styles.circle}>
+
+           <View style={{flexDirection:'row'}}>
+           <View style={styles.circle}>
             <Image
               style={styles.empolyeimage}
               source={{
@@ -40,10 +42,12 @@ const EmpolyeList = ({ navigation }) => {
             />
           </View>
 
-          <View style={{ marginRight: wp(10) }} >
+          <View>
             <Text style={styles.listtext}>{item.name}</Text>
             <Text style={styles.listtextsub} >{item.designation}</Text>
           </View>
+           </View>
+        
           <Text style={styles.listlasttext}>{item.code}</Text>
         </View>
       </TouchableOpacity>
@@ -59,6 +63,7 @@ const EmpolyeList = ({ navigation }) => {
         snap.forEach((item) => {
           temArray.push(item.data())
         })
+  
         setItems(temArray);
         setIsLoading(false);
       })
@@ -111,18 +116,17 @@ const EmpolyeList = ({ navigation }) => {
 const styles = StyleSheet.create({
 
   list: {
+    width:wp(96),
     flexDirection: 'row',
-    width: wp(93),
     backgroundColor: 'white',
-    
-    paddingLeft: wp(4),
-    paddingRight: hp(2),
-    marginHorizontal: wp(2),
-    borderRadius: wp(1),
     marginTop: hp(.8),
     alignItems: 'center',
-    paddingVertical: hp(2),
     justifyContent: 'space-between',
+   paddingHorizontal:wp(2),
+   marginHorizontal:wp(1),
+   paddingVertical:hp(1),
+    borderRadius:10
+
     
   },
   listtext: {
@@ -140,10 +144,11 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
   listlasttext: {
-    fontSize: hp(2),
+    fontSize: hp(1.5),
     color: 'grey',
     fontFamily: 'OpenSans-SemiBold',
-    width: wp(20),
+    // width: wp(15),
+    // borderWidth:1
   },
   circle: {
     borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2,
